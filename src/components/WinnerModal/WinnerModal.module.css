@@ -1,0 +1,128 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  color: #FA8072;
+  margin: 0 0 16px 0;
+}
+
+.winnerName {
+  font-size: 32px;
+  color: #2C2C2C;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.score {
+  font-size: 24px;
+  color: #4CAF50;
+  font-weight: 600;
+  margin: 0 0 32px 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.undoButton {
+  padding: 16px 32px;
+  font-size: 18px;
+  background: white;
+  color: #FF9800;
+  border: 2px solid #FF9800;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.undoButton:hover {
+  background: #FFF3E0;
+}
+
+.newGameButton {
+  padding: 16px 32px;
+  font-size: 18px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.newGameButton:hover {
+  background: #45A049;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 32px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .winnerName {
+    font-size: 26px;
+  }
+
+  .score {
+    font-size: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .undoButton,
+  .newGameButton {
+    width: 100%;
+  }
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .overlay {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+:global(.dark-mode) .modal {
+  background: #2C2C2C;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+:global(.dark-mode) .winnerName {
+  color: #FFFFFF;
+}
+
+:global(.dark-mode) .undoButton {
+  background: #1a1a1a;
+  border-color: #FF9800;
+}
+
+:global(.dark-mode) .undoButton:hover {
+  background: #3a3a3a;
+}

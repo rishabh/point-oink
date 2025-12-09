@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: #F8F8F8;
+  border-radius: 8px;
+}
+
+.turnInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: white;
+  border-radius: 6px;
+}
+
+.label {
+  font-size: 14px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.points {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4CAF50;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.undoButton,
+.bankButton {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.undoButton {
+  background: #FF9800;
+  color: white;
+}
+
+.undoButton:hover:not(:disabled) {
+  background: #F57C00;
+}
+
+.undoButton:disabled {
+  background: #E0E0E0;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.bankButton {
+  background: #4CAF50;
+  color: white;
+}
+
+.bankButton:hover:not(:disabled) {
+  background: #45A049;
+}
+
+.bankButton:disabled {
+  background: #E0E0E0;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+  }
+
+  .undoButton,
+  .bankButton {
+    width: 100%;
+  }
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .container {
+  background: #1a1a1a;
+}
+
+:global(.dark-mode) .turnInfo {
+  background: #2C2C2C;
+}
+
+:global(.dark-mode) .label {
+  color: #BBBBBB;
+}
+
+:global(.dark-mode) .undoButton:disabled,
+:global(.dark-mode) .bankButton:disabled {
+  background: #444444;
+  color: #777777;
+}

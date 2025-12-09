@@ -1,0 +1,98 @@
+.sidebar {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 24px;
+  color: #2C2C2C;
+  margin: 0;
+}
+
+.playerList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.actions {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #F0F0F0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addButton {
+  width: 100%;
+  padding: 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.addButton:hover {
+  background: #45A049;
+}
+
+.resetButton {
+  width: 100%;
+  padding: 12px;
+  background: #F44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.resetButton:hover {
+  background: #D32F2F;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-height: none;
+  }
+
+  .playerList {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 80px;
+  }
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .sidebar {
+  background: #2C2C2C;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+:global(.dark-mode) .title {
+  color: #FFFFFF;
+}
+
+:global(.dark-mode) .actions {
+  border-top-color: #444444;
+}

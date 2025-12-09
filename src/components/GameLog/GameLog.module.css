@@ -1,0 +1,270 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  max-height: 500px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0;
+  text-align: center;
+}
+
+.empty {
+  text-align: center;
+  color: #999999;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.logList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.playerGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.playerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FA8072;
+  padding: 8px 12px;
+  background: #FFF5F4;
+  border-left: 4px solid #FA8072;
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+
+.playerName {
+  flex: 1;
+}
+
+.turnNumber {
+  font-size: 12px;
+  font-weight: 600;
+  color: #999999;
+}
+
+.logEntry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #F8F8F8;
+  border-radius: 6px;
+  border-left: 3px solid #E0E0E0;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.logEntry:hover {
+  background: #F0F0F0;
+}
+
+.logEntry.roll {
+  border-left-color: #2196F3;
+  background: #E3F2FD;
+}
+
+.logEntry.roll:hover {
+  background: #BBDEFB;
+}
+
+.logEntry.bank {
+  border-left-color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.logEntry.bank:hover {
+  background: #C8E6C9;
+}
+
+.logEntry.pigout {
+  border-left-color: #F44336;
+  background: #FFEBEE;
+}
+
+.logEntry.pigout:hover {
+  background: #FFCDD2;
+}
+
+.logEntry.special {
+  border-left-color: #FF9800;
+  background: #FFF3E0;
+}
+
+.logEntry.special:hover {
+  background: #FFE0B2;
+}
+
+.logEntry.game {
+  border-left-color: #9C27B0;
+  background: #F3E5F5;
+}
+
+.logEntry.game:hover {
+  background: #E1BEE7;
+}
+
+.logEntry.edit {
+  border-left-color: #607D8B;
+  background: #ECEFF1;
+}
+
+.logEntry.edit:hover {
+  background: #CFD8DC;
+}
+
+.icon {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.text {
+  flex: 1;
+  color: #2C2C2C;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+    max-height: 400px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .logList {
+    gap: 12px;
+  }
+
+  .playerHeader {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .turnNumber {
+    font-size: 11px;
+  }
+
+  .logEntry {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .icon {
+    font-size: 14px;
+  }
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .container {
+  background: #2C2C2C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+:global(.dark-mode) .title {
+  color: #FFFFFF;
+}
+
+:global(.dark-mode) .empty {
+  color: #777777;
+}
+
+:global(.dark-mode) .playerHeader {
+  background: #3a2828;
+  border-left-color: #FA8072;
+}
+
+:global(.dark-mode) .turnNumber {
+  color: #BBBBBB;
+}
+
+:global(.dark-mode) .logEntry {
+  background: #1a1a1a;
+  border-left-color: #555555;
+}
+
+:global(.dark-mode) .logEntry:hover {
+  background: #333333;
+}
+
+:global(.dark-mode) .logEntry.roll {
+  background: #1a2a3a;
+  border-left-color: #2196F3;
+}
+
+:global(.dark-mode) .logEntry.roll:hover {
+  background: #243545;
+}
+
+:global(.dark-mode) .logEntry.bank {
+  background: #1a2a1a;
+  border-left-color: #4CAF50;
+}
+
+:global(.dark-mode) .logEntry.bank:hover {
+  background: #243524;
+}
+
+:global(.dark-mode) .logEntry.pigout {
+  background: #3a1a1a;
+  border-left-color: #F44336;
+}
+
+:global(.dark-mode) .logEntry.pigout:hover {
+  background: #452424;
+}
+
+:global(.dark-mode) .logEntry.special {
+  background: #3a2a1a;
+  border-left-color: #FF9800;
+}
+
+:global(.dark-mode) .logEntry.special:hover {
+  background: #453524;
+}
+
+:global(.dark-mode) .logEntry.game {
+  background: #2a1a2a;
+  border-left-color: #9C27B0;
+}
+
+:global(.dark-mode) .logEntry.game:hover {
+  background: #352435;
+}
+
+:global(.dark-mode) .logEntry.edit {
+  background: #1a2a2a;
+  border-left-color: #607D8B;
+}
+
+:global(.dark-mode) .logEntry.edit:hover {
+  background: #243535;
+}
+
+:global(.dark-mode) .text {
+  color: #FFFFFF;
+}

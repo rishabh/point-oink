@@ -1,0 +1,28 @@
+.app {
+  min-height: 100vh;
+  background-color: #FA8072;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background-color 0.3s ease;
+}
+
+:global(.dark-mode) .app {
+  background-color: #1a1a1a;
+}
+
+.gameBoard {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  height: calc(100vh - 32px);
+}
+
+@media (max-width: 768px) {
+  .gameBoard {
+    flex-direction: column;
+    height: auto;
+  }
+}

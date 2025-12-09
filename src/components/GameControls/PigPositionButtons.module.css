@@ -1,0 +1,433 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 40px;
+}
+
+.stepTitle {
+  font-size: 15px;
+  color: #2C2C2C;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pigOutButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #FFEBEE;
+  border: 2px solid #F44336;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #F44336;
+  transition: all 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pigOutButton:hover:not(:disabled) {
+  background: #FFCDD2;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(244, 67, 54, 0.3);
+}
+
+.pigOutButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pigOutArrow {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.pigOutText {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.selectedPositionSpace {
+  min-height: 65px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.selectedPositionBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 12px 8px;
+  background: #FFF5F4;
+  border: 2px solid #FA8072;
+  border-radius: 8px;
+  font-size: 14px;
+  min-height: 65px;
+  min-width: 90px;
+  box-shadow: 0 0 0 2px rgba(250, 128, 114, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+.selectedPositionBox .removeButton {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: #F44336;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.selectedPositionBox .removeButton:hover {
+  background: #D32F2F;
+  transform: scale(1.1);
+}
+
+.resultBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 10px;
+  background: #E8F5E9;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  font-size: 14px;
+  min-height: 65px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.resultBox.pigOut {
+  background: #FFEBEE;
+  border-color: #F44336;
+}
+
+.resultArrow {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4CAF50;
+  line-height: 1;
+}
+
+.resultBox.pigOut .resultArrow {
+  color: #F44336;
+}
+
+.resultContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.resultBox .label {
+  color: #2C2C2C;
+  font-weight: 700;
+}
+
+.resultBox .points {
+  color: #4CAF50;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.resultBox.pigOut .points {
+  color: #F44336;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.positionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 8px;
+}
+
+.positionButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 12px 8px;
+  background: #F8F8F8;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+  min-height: 65px;
+}
+
+.positionButton:hover:not(:disabled) {
+  background: #FFF5F4;
+  border-color: #FA8072;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(250, 128, 114, 0.2);
+}
+
+.positionButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.positionButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.label {
+  font-weight: 600;
+  color: #2C2C2C;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.points {
+  font-size: 11px;
+  color: #666666;
+  font-weight: 600;
+}
+
+.specialSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #E0E0E0;
+}
+
+.specialTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: 0;
+  text-align: center;
+}
+
+.specialGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.specialButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 8px;
+  background: #FFF3E0;
+  border: 2px solid #FF9800;
+  border-radius: 8px;
+  font-size: 13px;
+  transition: all 0.2s;
+  min-height: 55px;
+}
+
+.specialButton:hover:not(:disabled) {
+  background: #FFE0B2;
+  border-color: #FF9800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.2);
+}
+
+.specialButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.specialButton .points {
+  color: #E65100;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    gap: 10px;
+  }
+
+  .header {
+    min-height: 36px;
+  }
+
+  .stepTitle {
+    font-size: 13px;
+  }
+
+  .pigOutButton {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .pigOutArrow {
+    font-size: 14px;
+  }
+
+  .pigOutText {
+    font-size: 10px;
+  }
+
+  .selectedPositionSpace {
+    min-height: 55px;
+  }
+
+  .selectedPositionBox {
+    min-height: 55px;
+    min-width: 75px;
+    padding: 10px 6px;
+  }
+
+  .resultBox {
+    min-height: 55px;
+    padding: 10px 8px;
+    gap: 4px;
+  }
+
+  .resultArrow {
+    font-size: 16px;
+  }
+
+  .positionGrid {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 6px;
+  }
+
+  .positionButton {
+    min-height: 55px;
+    padding: 10px 6px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .points {
+    font-size: 10px;
+  }
+
+  .specialGrid {
+    gap: 6px;
+  }
+
+  .specialButton {
+    min-height: 50px;
+    padding: 8px 6px;
+  }
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .stepTitle {
+  color: #FFFFFF;
+}
+
+:global(.dark-mode) .pigOutButton {
+  background: #3a1a1a;
+  border-color: #F44336;
+}
+
+:global(.dark-mode) .pigOutButton:hover:not(:disabled) {
+  background: #452424;
+}
+
+:global(.dark-mode) .selectedPositionBox {
+  background: #3a2828;
+  border-color: #FA8072;
+}
+
+:global(.dark-mode) .selectedPositionBox .removeButton {
+  border-color: #2C2C2C;
+}
+
+:global(.dark-mode) .resultBox {
+  background: #1a2a1a;
+  border-color: #4CAF50;
+}
+
+:global(.dark-mode) .resultBox.pigOut {
+  background: #3a1a1a;
+  border-color: #F44336;
+}
+
+:global(.dark-mode) .resultBox .label {
+  color: #FFFFFF;
+}
+
+:global(.dark-mode) .positionButton {
+  background: #1a1a1a;
+  border-color: #444444;
+}
+
+:global(.dark-mode) .positionButton:hover:not(:disabled) {
+  background: #3a2828;
+  border-color: #FA8072;
+}
+
+:global(.dark-mode) .label {
+  color: #FFFFFF;
+}
+
+:global(.dark-mode) .points {
+  color: #BBBBBB;
+}
+
+:global(.dark-mode) .specialSection {
+  border-top-color: #444444;
+}
+
+:global(.dark-mode) .specialTitle {
+  color: #777777;
+}
+
+:global(.dark-mode) .specialButton {
+  background: #3a2a1a;
+  border-color: #FF9800;
+}
+
+:global(.dark-mode) .specialButton:hover:not(:disabled) {
+  background: #453524;
+}
